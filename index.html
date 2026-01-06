@@ -2,10 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Robô Calculador</title>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <title>Calculadora Python</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.05.1/pyscript.css" />
-<script defer src="https://pyscript.net/releases/2023.05.1/pyscript.js"></script>
+    <script defer src="https://pyscript.net/releases/2023.05.1/pyscript.js"></script>
+    <style>
         body { background-color: #2c3e50; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial; }
         .calculadora { background: #ecf0f1; padding: 30px; border-radius: 20px; text-align: center; width: 320px; }
         input { width: 80px; padding: 10px; margin: 10px; border-radius: 8px; border: 1px solid #bdc3c7; text-align: center; }
@@ -19,13 +19,13 @@
         <input type="number" id="n1" placeholder="N1">
         <input type="number" id="n2" placeholder="N2">
         <div class="botoes">
-            <button onclick="calcular('+')">Somar (+)</button>
-            <button onclick="calcular('-')">Subtrair (-)</button>
-            <button onclick="calcular('*')">Multiplicar (x)</button>
-            <button onclick="calcular('/')">Dividir (÷)</button>
+            <button py-click="calcular('+')">Somar (+)</button>
+            <button py-click="calcular('-')">Subtrair (-)</button>
+            <button py-click="calcular('*')">Multiplicar (x)</button>
+            <button py-click="calcular('/')">Dividir (÷)</button>
         </div>
         <h2 id="resultado">Resultado: ?</h2>
     </div>
-    <script type=<py-script src="./calculadora.py"></py-script>
+    <py-script src="./calculadora.py"></py-script>
 </body>
 </html>
