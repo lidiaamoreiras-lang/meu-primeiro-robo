@@ -1,8 +1,53 @@
-<h1>Olá! Eu sou o seu primeiro robô!</h1>
-<button onclick="falar()">Clique em mim!</button>
-
-<script>
-  function falar() {
-    alert("Bip Bop! Você conseguiu criar e salvar um arquivo no GitHub! 🤖");
-  }
-</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Robô Calculador</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background-color: #2c3e50; padding: 50px; color: white; }
+        .caixa { background: #ecf0f1; padding: 30px; border-radius: 20px; box-shadow: 0px 10px 30px rgba(0,0,0,0.5); display: inline-block; color: #333; }
+        input { padding: 12px; margin: 10px; border-radius: 8px; border: 2px solid #bdc3c7; width: 100px; font-size: 16px; text-align: center; }
+        .btn-soma { background-color: #27ae60; color: white; }
+        .btn-sub  { background-color: #e67e22; color: white; }
+        .btn-div  { background-color: #2980b9; color: white; }
+        button { padding: 12px 20px; margin: 5px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { opacity: 0.8; transform: scale(1.05); }
+        #resultado { margin-top: 20px; font-size: 1.5em; color: #2c3e50; background: #fff; padding: 10px; border-radius: 10px; min-height: 40px; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h2>🤖 Super Robô Multi-Calculador</h2>
+        <input type="number" id="n1" placeholder="N1">
+        <input type="number" id="n2" placeholder="N2">
+        <br>
+        <button class="btn-soma" onclick="calcular('+')">Somar (+)</button>
+        <button class="btn-sub" onclick="calcular('-')">Subtrair (-)</button>
+        <button class="btn-div" onclick="calcular('/')">Dividir (/)</button>
+        <div id="resultado">Resultado: ?</div>
+    </div>
+    <script>
+        function calcular(operacao) {
+            var num1 = Number(document.getElementById("n1").value);
+            var num2 = Number(document.getElementById("n2").value);
+            var res = 0;
+            var texto = "";
+            if (operacao === '+') {
+                res = num1 + num2;
+                texto = "A soma é: ";
+            } else if (operacao === '-') {
+                res = num1 - num2;
+                texto = "A subtração é: ";
+            } else if (operacao === '/') {
+                if (num2 === 0) {
+                    alert("Não é possível dividir por zero!");
+                    return;
+                }
+                res = num1 / num2;
+                texto = "A divisão é: ";
+            }
+            document.getElementById("resultado").innerHTML = texto + res;
+        }
+    </script>
+</body>
+</html>
