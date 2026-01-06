@@ -1,9 +1,14 @@
-print("--- CALCULADORA MÁGICA EM PYTHON ---")
-nome = input("Qual é o seu nome? ")
-print(f"Olá {nome}! Vamos somar?")
-
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-
-resultado = num1 + num2
-print(f"O robô calculou que a soma é: {resultado}")
+def calcular(operacao):
+    n1 = float(elemento_n1.value)
+    n2 = float(elemento_n2.value)
+    
+    if operacao == '+':
+        resultado = n1 + n2
+    elif operacao == '-':
+        resultado = n1 - n2
+    elif operacao == '*':
+        resultado = n1 * n2
+    elif operacao == '/':
+        resultado = n1 / n2
+    
+    elemento_resultado.innerHTML = f"Resultado: {resultado}"
